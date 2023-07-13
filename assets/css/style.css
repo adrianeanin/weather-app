@@ -1,0 +1,64 @@
+@import url("./cssReset.css");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap");
+
+:root {
+  font-family: "Raleway", sans-serif;
+}
+
+/* sidebar stayling */
+
+.current-weather {
+  border: 2px solid red;
+}
+
+/* forecast styling */
+
+.forecast-unit {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+}
+
+.forecast-wrapper {
+  border: 2px solid yellow;
+}
+
+.forecast {
+  border: 2px solid pink;
+}
+
+.current-weather,
+.forecast-wrapper {
+  margin-inline: auto;
+  width: 90%;
+}
+
+.container {
+  display: grid;
+}
+
+.week-forecast-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+}
+
+.daily-highlight {
+  border: 2px solid black;
+}
+
+@media (min-width: 50em) {
+  .container {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .current-weather,
+  .forecast-wrapper {
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .week-forecast-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

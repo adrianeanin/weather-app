@@ -2,15 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const input = document.querySelector(".locationInput");
   const btn = document.querySelector(".weatherBtn");
 
-  let location;
-
   const getWeather = async () => {
-    location = input.value;
-    console.log(location);
+    console.log(input.value);
     console.log("Button clicked");
     try {
       const r = await fetch(
-        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=HMG46QMCWL33BVNPH78JACBKY&contentType=json`,
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${input.value}?unitGroup=metric&key=HMG46QMCWL33BVNPH78JACBKY&contentType=json`,
         { mode: "cors" }
       );
       const data = await r.json();
@@ -24,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const r = await fetch(
         `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(
-          (location = input.value)
+          input.value
         )}&format=json&limit=1`
       );
 
@@ -52,5 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return console.log(data);
   };
 
-  btn.addEventListener("click", getWeather);
+  input.addEventListener("change", getWeather);
 });
+
+//working with the currentConditions property
+// days array for future days

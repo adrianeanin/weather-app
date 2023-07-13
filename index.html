@@ -8,11 +8,105 @@
       href="./assets/images/favicon.svg"
       type="image/x-icon"
     />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="js/app.js" defer></script>
     <title>Weather App</title>
   </head>
   <body>
-    <input type="text" class="locationInput" />
-    <button class="weatherBtn">Get Weather</button>
+    <div class="container">
+      <div class="search-pane">
+        <button class="closeBtn">X</button>
+        <form action="#" method="get">
+          <input
+            type="text"
+            class="locationInput"
+            placeholder="Search location"
+          />
+          <button class="weatherBtn">Search</button>
+        </form>
+      </div>
+      <aside class="current-weather">
+        <div class="current-weather-search">
+          <button class="search-btn">Search for places</button>
+        </div>
+        <div class="current-weather-icon">cloud icon</div>
+        <div class="current-temperature"><p>15 deg</p></div>
+        <div class="current-weather-description"><p>Shower</p></div>
+        <div class="current-date"><p>Thu 13 Jun</p></div>
+        <div class="current-location">
+          <div class="current-location-icon">icon</div>
+          <p class="current-location-text">Accra</p>
+        </div>
+      </aside>
+
+      <div class="forecast-wrapper">
+        <div class="forecast-unit">
+          <button class="celcius">C</button>
+          <button class="fahrenheit">F</button>
+        </div>
+
+        <div class="week-forecast-wrapper">
+          <div class="forecast">
+            <p>Tommorow</p>
+            <div class="icon">cloud</div>
+            <div class="high-low">
+              <div class="high">18deg</div>
+              <div class="low">15deg</div>
+            </div>
+          </div>
+          <div class="forecast">
+            <p>Tommorow</p>
+            <div class="icon">cloud</div>
+            <div class="high-low">
+              <div class="high">18deg</div>
+              <div class="low">15deg</div>
+            </div>
+          </div>
+          <div class="forecast">
+            <p>Tommorow</p>
+            <div class="icon">cloud</div>
+            <div class="high-low">
+              <div class="high">18deg</div>
+              <div class="low">15deg</div>
+            </div>
+          </div>
+          <div class="forecast">
+            <p>Tommorow</p>
+            <div class="icon">cloud</div>
+            <div class="high-low">
+              <div class="high">18deg</div>
+              <div class="low">15deg</div>
+            </div>
+          </div>
+        </div>
+        <div class="daily-highlight">
+          <p>Today's Highlights</p>
+          <div class="wind-status">
+            <p>Wind Status</p>
+            <p>7 <sub>mph</sub></p>
+          </div>
+          <div class="humidity">
+            <p>Humidity</p>
+            <p>84&percnt;</p>
+          </div>
+          <div class="visibility">
+            <p>Visibility</p>
+            <p>6,000 miles</p>
+          </div>
+          <div class="air-pressure">
+            <p>Air pressure</p>
+            <p>998 mb</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
+
+<div class="search-pane">
+  <button class="closeBtn">X</button>
+  <form action="#" method="get">
+    <input type="text" class="locationInput" />
+    <button class="weatherBtn">Search</button>
+  </form>
+</div>
