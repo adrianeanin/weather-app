@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const input = document.querySelector(".locationInput");
-  const btn = document.querySelector(".weatherBtn");
+  const btn = document.querySelector(".weather-btn");
 
   const getWeather = async () => {
     console.log(input.value);
@@ -54,3 +54,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //working with the currentConditions property
 // days array for future days
+
+// Nav
+const searchPane = document.querySelector(".search-pane");
+const searchBtn = document.querySelector(".search-btn");
+const closeBtn = document.querySelector(".close-btn");
+const currentWeatherPane = document.querySelector(".current-weather");
+
+searchBtn.addEventListener("click", function () {
+  searchPane.style.display = "grid";
+  currentWeatherPane.style.display = "none";
+});
+
+closeBtn.addEventListener("click", function () {
+  searchPane.style.display = "none";
+  currentWeatherPane.style.display = "grid";
+});

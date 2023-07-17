@@ -15,34 +15,43 @@
   <body>
     <div class="container">
       <div class="search-pane">
-        <button class="closeBtn">X</button>
+        <button class="close-btn">
+          <svg class="icon">
+            <use xlink:href="./assets/images/close.svg#close"></use>
+          </svg>
+        </button>
         <form action="#" method="get">
           <input
             type="text"
             class="locationInput"
             placeholder="Search location"
           />
-          <button class="weatherBtn">Search</button>
+          <button class="weather-btn">Search</button>
         </form>
       </div>
+
       <aside class="current-weather">
         <div class="current-weather-search">
           <button class="search-btn">Search for places</button>
         </div>
         <div class="current-weather-icon">cloud icon</div>
-        <div class="current-temperature"><p>15 deg</p></div>
+        <div class="current-temperature"><p>15 &deg;C</p></div>
         <div class="current-weather-description"><p>Shower</p></div>
-        <div class="current-date"><p>Thu 13 Jun</p></div>
+        <div class="current-date"><p>Thu, 13 Jun</p></div>
         <div class="current-location">
-          <div class="current-location-icon">icon</div>
+          <div class="current-location-icon">
+            <svg class="icon">
+              <use xlink:href="./assets/images/location.svg#location"></use>
+            </svg>
+          </div>
           <p class="current-location-text">Accra</p>
         </div>
       </aside>
 
       <div class="forecast-wrapper">
         <div class="forecast-unit">
-          <button class="celcius">C</button>
-          <button class="fahrenheit">F</button>
+          <button class="celcius">&deg;C</button>
+          <button class="fahrenheit">&deg;F</button>
         </div>
 
         <div class="week-forecast-wrapper">
@@ -51,7 +60,7 @@
             <div class="icon">cloud</div>
             <div class="high-low">
               <div class="high">18deg</div>
-              <div class="low">15deg</div>
+              <div class="low">16 &deg;C</div>
             </div>
           </div>
           <div class="forecast">
@@ -79,8 +88,9 @@
             </div>
           </div>
         </div>
+
+        <p class="highlight-heading">Today's Highlights</p>
         <div class="daily-highlight">
-          <p>Today's Highlights</p>
           <div class="wind-status">
             <p>Wind Status</p>
             <p>7 <sub>mph</sub></p>
@@ -102,11 +112,3 @@
     </div>
   </body>
 </html>
-
-<div class="search-pane">
-  <button class="closeBtn">X</button>
-  <form action="#" method="get">
-    <input type="text" class="locationInput" />
-    <button class="weatherBtn">Search</button>
-  </form>
-</div>

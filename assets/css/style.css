@@ -5,46 +5,217 @@
   font-family: "Raleway", sans-serif;
 }
 
+body {
+  color: #a09fb1;
+  height: 100vh;
+  font-size: 1rem;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+}
+
 /* sidebar stayling */
 
 .current-weather {
-  border: 2px solid red;
+  background-color: #1e213a;
+  display: grid;
+  gap: 3em;
+  place-items: center;
+  position: relative;
+}
+
+.current-weather-search {
+  justify-self: flex-start;
+}
+
+.search-btn,
+.weather-btn {
+  border-radius: 0.25rem;
+  border: none;
+  padding: 0.25rem;
+  margin: 1rem;
+  color: #e7e7eb;
+  background-color: #3c47e9;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.search-btn:hover,
+.weather-btn:hover,
+.weather-btn:focus,
+.search-btn:focus {
+  cursor: pointer;
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.current-temperature {
+  font-size: 4rem;
+  font-weight: 500;
+  color: #e7e7eb;
+}
+
+.current-weather-description p {
+  font-size: 2.25rem;
+  font-weight: 400;
+}
+
+.current-location {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 2rem;
+}
+
+svg.icon {
+  margin: 0;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+}
+
+/* mobile nav stayling */
+
+.search-pane {
+  background-color: #1e213a;
+  display: none;
+  gap: 1em;
+  place-content: center;
+}
+
+.locationInput {
+  border: 2px solid #a09fb1;
+  background-color: transparent;
+  color: #e7e7eb;
+  margin: 1rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.locationInput::placeholder {
+  color: #616475;
+}
+
+.close-btn {
+  border: none;
+  background-color: #1e213a;
+  transition: opacity 0.3s;
+}
+
+.weather-btn {
+  padding: 0.75rem 1rem;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  cursor: pointer;
+  opacity: 0.8;
 }
 
 /* forecast styling */
+
+.forecast-wrapper {
+  background-color: #100e1d;
+}
 
 .forecast-unit {
   display: flex;
   justify-content: flex-end;
   gap: 1em;
-}
-
-.forecast-wrapper {
-  border: 2px solid yellow;
-}
-
-.forecast {
-  border: 2px solid pink;
-}
-
-.current-weather,
-.forecast-wrapper {
+  margin: 0.5rem 0;
   margin-inline: auto;
   width: 90%;
 }
 
-.container {
+.forecast-unit button {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  transition: opacity 0.3s;
+}
+
+.forecast-unit button:hover,
+button:focus {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.fahrenheit {
+  background-color: #585676;
+  color: #e7e7eb;
+}
+
+.celcius {
+  background-color: #e7e7eb;
+  color: #100e1d;
+}
+
+.forecast {
+  min-height: 11rem;
   display: grid;
+  place-items: center;
+  background-color: #1e213a;
+}
+.forecast p {
+  color: #e7e7eb;
+  font-size: 1rem;
+}
+
+.high-low {
+  display: flex;
+  gap: 1rem;
+}
+
+.high {
+  color: #e7e7eb;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .week-forecast-wrapper {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
   gap: 1em;
+  margin-inline: auto;
+  width: 90%;
 }
 
 .daily-highlight {
-  border: 2px solid black;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-inline: auto;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.daily-highlight div {
+  width: 20rem;
+  min-height: 12rem;
+  margin-inline: auto;
+  display: grid;
+  place-items: center;
+  background-color: #1e213a;
+}
+
+.daily-highlight div p:first-child {
+  color: #e7e7eb;
+  font-weight: 500;
+}
+
+.daily-highlight div p:nth-child(2) {
+  color: #e7e7eb;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.highlight-heading {
+  margin-inline: auto;
+  width: 90%;
+  color: #e7e7eb;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1rem;
 }
 
 @media (min-width: 50em) {
@@ -53,12 +224,27 @@
   }
 
   .current-weather,
-  .forecast-wrapper {
+  .forecast-wrapper,
+  .search-pane {
     margin-inline: auto;
     width: 100%;
   }
 
   .week-forecast-wrapper {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .locationInput {
+    padding: 0.75rem 3rem;
+  }
+
+  .weather-btn {
+    padding: 0.75rem 2rem;
+  }
+  .daily-highlight div {
+    margin-inline: 0;
+  }
+  .daily-highlight {
+    grid-template-columns: 1fr 1fr;
   }
 }
