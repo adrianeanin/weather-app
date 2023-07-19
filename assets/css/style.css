@@ -3,10 +3,16 @@
 
 :root {
   font-family: "Raleway", sans-serif;
+
+  --text: #050505;
+  --background: #fafafa;
+  --primary: #397fef;
+  --secondary: #d0e0fb;
+  --accent: #1266ed;
 }
 
 body {
-  color: #a09fb1;
+  color: var(--text);
   height: 100vh;
   font-size: 1rem;
 }
@@ -19,11 +25,23 @@ body {
 /* sidebar stayling */
 
 .current-weather {
-  background-color: #1e213a;
+  background-color: var(--secondary);
   display: grid;
   gap: 3em;
   place-items: center;
   position: relative;
+  isolation: isolate;
+}
+
+.current-weather::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  inset: 0;
 }
 
 .current-weather-search {
@@ -36,8 +54,8 @@ body {
   border: none;
   padding: 0.25rem;
   margin: 1rem;
-  color: #e7e7eb;
-  background-color: #3c47e9;
+  color: var(--background);
+  background-color: var(--accent);
   transition: transform 0.3s, opacity 0.3s;
 }
 
@@ -53,7 +71,11 @@ body {
 .current-temperature {
   font-size: 4rem;
   font-weight: 500;
-  color: #e7e7eb;
+  color: var(--background);
+}
+
+.current-temperature p {
+  color: var(--text);
 }
 
 .current-weather-description p {
@@ -77,28 +99,33 @@ svg.icon {
 /* mobile nav stayling */
 
 .search-pane {
-  background-color: #1e213a;
+  background-color: var(--secondary);
   display: none;
   gap: 1em;
   place-content: center;
+  padding-bottom: 4rem;
 }
 
 .locationInput {
-  border: 2px solid #a09fb1;
+  border: 2px solid var(--accent);
   background-color: transparent;
-  color: #e7e7eb;
+  color: var(--white);
   margin: 1rem;
   padding: 0.75rem 1.5rem;
 }
 
 .locationInput::placeholder {
-  color: #616475;
+  color: var(--primary);
 }
 
 .close-btn {
+  justify-self: flex-start;
   border: none;
-  background-color: #1e213a;
+  background-color: var(--accent);
   transition: opacity 0.3s;
+  border-radius: 0.5rem;
+  display: grid;
+  place-items: center;
 }
 
 .weather-btn {
@@ -114,50 +141,18 @@ svg.icon {
 /* forecast styling */
 
 .forecast-wrapper {
-  background-color: #100e1d;
-}
-
-.forecast-unit {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1em;
-  margin: 0.5rem 0;
-  margin-inline: auto;
-  width: 90%;
-}
-
-.forecast-unit button {
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  border: none;
-  transition: opacity 0.3s;
-}
-
-.forecast-unit button:hover,
-button:focus {
-  cursor: pointer;
-  opacity: 0.8;
-}
-
-.fahrenheit {
-  background-color: #585676;
-  color: #e7e7eb;
-}
-
-.celcius {
-  background-color: #e7e7eb;
-  color: #100e1d;
+  padding-top: 2rem;
+  background-color: var(--background);
 }
 
 .forecast {
   min-height: 11rem;
   display: grid;
   place-items: center;
-  background-color: #1e213a;
+  background-color: var(--secondary);
 }
 .forecast p {
-  color: #e7e7eb;
+  color: var(--white);
   font-size: 1rem;
 }
 
@@ -167,7 +162,7 @@ button:focus {
 }
 
 .high {
-  color: #e7e7eb;
+  color: var(--white);
   font-size: 1rem;
   font-weight: 500;
 }
@@ -195,16 +190,16 @@ button:focus {
   margin-inline: auto;
   display: grid;
   place-items: center;
-  background-color: #1e213a;
+  background-color: var(--secondary);
 }
 
 .daily-highlight div p:first-child {
-  color: #e7e7eb;
+  color: var(--white);
   font-weight: 500;
 }
 
 .daily-highlight div p:nth-child(2) {
-  color: #e7e7eb;
+  color: var(--white);
   font-size: 3rem;
   font-weight: 700;
 }
@@ -212,7 +207,7 @@ button:focus {
 .highlight-heading {
   margin-inline: auto;
   width: 90%;
-  color: #e7e7eb;
+  color: var(--white);
   font-size: 1.5rem;
   font-weight: 500;
   padding: 1rem;
