@@ -81,8 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
       day.innerHTML = `      
       <p>${weatherData.days[i].datetime}</p>
       <div class="high-low">
-        <div class="high">${weatherData.days[i].tempmax} ${celsiusSymbol}</div>
-        <div class="low">${weatherData.days[i].tempmin} ${celsiusSymbol}</div>
+        <div class="high">H: ${weatherData.days[i].tempmax} ${celsiusSymbol}</div>
+        <div class="low">L: ${weatherData.days[i].tempmin} ${celsiusSymbol}</div>
       </div>`;
     });
   };
@@ -97,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const thunderStorm = "/assets/images/conditions/Thunderstorm.svg";
 
     const conditions = weatherData.currentConditions.conditions.toLowerCase();
-    console.log(conditions);
 
     if (conditions.includes("cloudy")) {
       currentWeatherPane.style.setProperty("--bg-image", `url(${cloudyUrl})`);

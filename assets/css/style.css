@@ -149,6 +149,7 @@ svg.icon {
   min-height: 11rem;
   display: grid;
   place-items: center;
+  border-radius: 10px;
   background-color: var(--secondary);
 }
 .forecast p {
@@ -191,6 +192,7 @@ svg.icon {
   display: grid;
   place-items: center;
   background-color: var(--secondary);
+  border-radius: 10px;
 }
 
 .daily-highlight div p:first-child {
