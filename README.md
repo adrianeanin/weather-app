@@ -19,7 +19,7 @@ The Weather App is a web application that provides real-time weather information
 3. To search for weather information for a different location, enter the desired location in the input field and click the search button or press Enter.
 4. The app will fetch the weather data for the entered location and display the updated information.
 5. The background image will change based on the current weather conditions.
-6. The app also provides a 7-day forecast for the entered location.
+6. The app also provides a 4-day forecast for the entered location.
 
 ## Development
 
