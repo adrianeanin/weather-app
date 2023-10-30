@@ -88,13 +88,14 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const updateBg = (weatherData) => {
-    const cloudyUrl = "/assets/images/conditions/cloudbg.svg";
-    const rainyUrl = "/assets/images/conditions/rainbg.svg";
-    const clearUrl = "/assets/images/conditions/Clear.svg";
-    const snowUrl = "/assets/images/conditions/snowbg.svg";
-    const sleetUrl = "/assets/images/conditions/Sleet.svg";
-    const hailUrl = "/assets/images/conditions/hail.svg";
-    const thunderStorm = "/assets/images/conditions/Thunderstorm.svg";
+    const cloudyUrl = "/weather-app/assets/images/conditions/cloudbg.svg";
+    const rainyUrl = "/weather-app/assets/images/conditions/rainbg.svg";
+    const clearUrl = "/weather-app/assets/images/conditions/Clear.svg";
+    const snowUrl = "/weather-app/assets/images/conditions/snowbg.svg";
+    const sleetUrl = "/weather-app/assets/images/conditions/Sleet.svg";
+    const hailUrl = "/weather-app/assets/images/conditions/hail.svg";
+    const thunderStorm =
+      "/weather-app/assets/images/conditions/Thunderstorm.svg";
 
     const conditions = weatherData.currentConditions.conditions.toLowerCase();
 
